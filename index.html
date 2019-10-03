@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"> 
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+<nav id="navbar">
+    <header>
+        RUST
+    </header>
+    <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Who_Rust_Is_For">Who Rust Is For</a></li>
+        <li><a class="nav-link" href="#Hello,_World!">Hello, World!</a></li>
+        <li><a class="nav-link" href="#Variables_and_Mutability">Variables and Mutability</a></li>
+        <li><a class="nav-link" href="#Functions">Functions</a></li>
+    </ul>
+
+
+
+</nav>
+
+
+<main id="main-doc">
+
+<section class="main-section" id="Introduction">
+    <header>Introduction</header>
+        <p>Welcome to The Rust Programming Language, an introductory book about Rust. The Rust programming language helps you write faster, more reliable software.</p>
+        <p>High-level ergonomics and low-level control are often at odds in programming language design; Rust challenges that conflict.</p>
+        <p>low-level control are often at odds in programming language design; Rust challenges that conflict. Through balancing powerful technical capacity and a great developer experience, Rust gives you the option to control low-level details (such as memory usage) without all the hassle traditionally associated with such control.</p>
+</section>
+
+
+
+
+
+<section class="main-section" id="Who_Rust_Is_For">
+<header>Who Rust Is For</header>
+    <p>Rust is ideal for many people for a variety of reasons. Let’s look at a few of the most important groups.</p>
+        <h3>Teams of Developers</h3>
+
+    <p>Rust is proving to be a productive tool for collaborating among large teams of developers with varying levels of systems programming knowledge. Low-level code is prone to a variety of subtle bugs, which in most other languages can be caught only through extensive testing and careful code review by experienced developers. In Rust, the compiler plays a gatekeeper role by refusing to compile code with these elusive bugs, including concurrency bugs. By working alongside the compiler, the team can spend their time focusing on the program’s logic rather than chasing down bugs.</p>
+    <p>Rust also brings contemporary developer tools to the systems programming world:</p>
+        <ul>
+            <li>Cargo, the included dependency manager and build tool, makes adding, compiling, and managing dependencies painless and consistent across the Rust ecosystem.</li>
+            <li>Rustfmt ensures a consistent coding style across developers.</li>
+            <li>The Rust Language Server powers Integrated Development Environment (IDE) integration for code completion and inline error messages.</li>
+        </ul>
+    <p>By using these and other tools in the Rust ecosystem, developers can be productive while writing systems-level code.</p>
+        <h3>Students</h3>
+        <ul>
+    <li>Rust is for students and those who are interested in learning about systems concepts.</li>
+    <li> Using Rust, many people have learned about topics like operating systems development. </li>
+    <li>The community is very welcoming and happy to answer student questions.</li>
+     </ul>   
+     <h3>Companies</h3>
+
+    <p>Hundreds of companies, large and small, use Rust in production for a variety of tasks. Those tasks include command line tools, web services, DevOps tooling, embedded devices, audio and video analysis and transcoding, cryptocurrencies, bioinformatics, search engines, Internet of Things applications, machine learning, and even major parts of the Firefox web browser.</p>
+        <h3>Open Source Developers</h3>
+
+    <p>Rust is for people who want to build the Rust programming language, community, developer tools, and libraries. We’d love to have you contribute to the Rust language.</p>
+        <h3>People Who Value Speed and Stability</h3>
+
+    <p>Rust is for people who crave speed and stability in a language. By speed, we mean the speed of the programs that you can create with Rust and the speed at which Rust lets you write them. The Rust compiler’s checks ensure stability through feature additions and refactoring. This is in contrast to the brittle legacy code in languages without these checks, which developers are often afraid to modify. By striving for zero-cost abstractions, higher-level features that compile to lower-level code as fast as code written manually, Rust endeavors to make safe code be fast code as well.</p>
+
+</section>
+
+
+
+
+<section class="main-section" id="Hello,_World!">
+<header>Hello, World!</header>
+<p>Let’s write your first Rust program. It’s traditional when learning a new language to write a little program that prints the text <code class="codes">Hello, world!</code> to the screen, so we’ll do the same here!</p>
+
+<h3>Creating a Project Directory</h3>
+    <p>You’ll start by making a directory to store your Rust code. It doesn’t matter to Rust where your code lives, but for the exercises and projects in this book, we suggest making a projects directory in your home directory and keeping all your projects there.</p>
+    <p>Open a terminal and enter the following commands to make a projects directory and a directory for the Hello, world! project within the projects directory.</p>
+    <p>For Linux, macOS, and PowerShell on Windows, enter this:</p>
+
+        <code class="codes">
+    $ mkdir ~/projects 
+    $ cd ~/projects
+    $ mkdir hello_world
+    $ cd hello_world
+        </code>
+    <p>For Windows CMD, enter this:</p>
+
+        <code class="codes">
+    > mkdir "%USERPROFILE%\projects"
+    > cd /d "%USERPROFILE%\projects"
+    > mkdir hello_world
+    > cd hello_world
+        </code>
+
+<h3>Writing and Running a Rust Program</h3>
+    <p>Next, make a new source file and call it main.rs. Rust files always end with the .rs extension. If you’re using more than one word in your filename, use an underscore to separate them. For example, use hello_world.rs rather than helloworld.rs.</p>
+    <p>Now open the main.rs file you just created and enter the code in Listing 1-1.</p>
+    <p>Filename: main.rs</p>
+
+        <code class="codes">
+    fn main() {
+    println!("Hello, world!");
+    }
+        </code>
+
+    <p>Save the file and go back to your terminal window. On Linux or macOS, enter the following commands to compile and run the file:</p>
+        <code class="codes">
+    $ rustc main.rs
+    $ ./main
+    Hello, world!
+         </code>
+
+    <p>On Windows, enter the command <code>\main.exe</code>. instead of <code>./main:</code></p>
+         <code class="codes">
+    > rustc main.rs
+    > .\main.exe
+    Hello, world!
+         </code>
+    <p>Regardless of your operating system, the string Hello, world! should print to the terminal. If you don’t see this output, refer back to the “Troubleshooting” part of the Installation section for ways to get help</p>
+    <p>If Hello, world! did print, congratulations! You’ve officially written a Rust program. That makes you a Rust programmer—welcome!</p>
+</section>
+
+
+
+
+
+<section class="main-section" id="Variables_and_Mutability">
+<header>Variables and Mutability</header>
+
+    <p>By default variables are immutable. This is one of many nudges Rust gives you to write your code in a way that takes advantage of the safety and easy concurrency that Rust offers. However, you still have the option to make your variables mutable. Let’s explore how and why Rust encourages you to favor immutability and why sometimes you might want to opt out.</p>
+    <p>When a variable is immutable, once a value is bound to a name, you can’t change that value. To illustrate this, let’s generate a new project called variables in your projects directory by using <code class="class">cargo new variables.</code></p>
+    <p>Then, in your new variables directory, open src/main.rs and replace its code with the following code that won’t compile just yet:</p>
+    <p>Filename: src/main.rs</p>
+
+        <code class="codes">
+    fn main() {
+    let x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The value of x is: {}", x);
+    }
+        </code>
+    <p>Save and run the program using cargo run. You should receive an error message, as shown in this output:</p>
+        <code class="codes">
+    error[E0384]: cannot assign twice to immutable variable `x`
+    --> src/main.rs:4:5
+      |
+    2 |     let x = 5;
+      |         - first assignment to `x`
+    3 |     println!("The value of x is: {}", x);
+    4 |     x = 6;
+      |     ^^^^^ cannot assign twice to immutable variable
+        </code>
+
+    <p>In Rust, the compiler guarantees that when you state that a value won’t change, it really won’t change. That means that when you’re reading and writing code, you don’t have to keep track of how and where a value might change. Your code is thus easier to reason through.</p>
+    <p>Filename: src/main.rs</p>
+        <code class="codes">
+        fn main() {
+        let mut x = 5;
+        println!("The value of x is: {}", x);
+        x = 6;
+        println!("The value of x is: {}", x);
+        }
+        </code>
+
+    <p>When we run the program now, we get this:</p>
+        <code class="codes">
+        $ cargo run
+        Compiling variables v0.1.0 (file:///projects/variables)
+        Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+        Running `target/debug/variables`
+        The value of x is: 5
+        The value of x is: 6
+        </code>
+    <p>We’re allowed to change the value that x binds to from 5 to 6 when mut is used. In some cases, you’ll want to make a variable mutable because it makes the code more convenient to write than if it had only immutable variables.</p>
+
+
+</section>
+
+
+<section class="main-section"id="Functions">
+<header>Functions</header>
+
+    <p>Functions are pervasive in Rust code. You’ve already seen one of the most important functions in the language: the main function, which is the entry point of many programs. You’ve also seen the fn keyword, which allows you to declare new functions.</p>
+    <p>Rust code uses snake case as the conventional style for function and variable names. In snake case, all letters are lowercase and underscores separate words. Here’s a program that contains an example function definition:</p>
+    <p>Filename: src/main.rs</p>
+
+        <code class="codes">
+        fn main() {
+            println!("Hello, world!");
+            another_function();
+        }
+                
+        fn another_function() {
+            println!("Another function.");
+        }
+        </code>
+    <p>Function definitions in Rust start with fn and have a set of parentheses after the function name. The curly brackets tell the compiler where the function body begins and ends.</p>
+    <p>We can call any function we’ve defined by entering its name followed by a set of parentheses. Because another_function is defined in the program, it can be called from inside the main function. Note that we defined another_function after the main function in the source code; we could have defined it before as well. Rust doesn’t care where you define your functions, only that they’re defined somewhere.</p>       
+
+</section>
+
+</main>
+
+
+
+
+</body>
+</html>
